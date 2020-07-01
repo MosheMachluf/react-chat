@@ -9,7 +9,7 @@ class App extends Component {
     super();
 
     if (!socket) {
-      socket = socketIOClient("http://localhost:4000");
+      socket = socketIOClient("https://react-app-chat1.herokuapp.com/");
     }
 
     socket.on("SET_USERNAME", (username) => {
