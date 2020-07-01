@@ -93,4 +93,5 @@ code {
 .message.message-me {
   background: #05ad89;
   color: #fff;
+  border-radius: 10px 0px 10px 10px;
 }

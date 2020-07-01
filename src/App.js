@@ -5,7 +5,9 @@ import socketIOClient from "socket.io-client";
 
 var socket = null;
 class App extends Component {
-  componentWillMount() {
+  constructor() {
+    super();
+
     if (!socket) {
       socket = socketIOClient("http://localhost:4000");
     }
@@ -17,8 +19,7 @@ class App extends Component {
     socket.on("CREATE_MESSAGE", (messageObject) => {
       this.setState({ messages: [...this.state.messages, messageObject] });
     });
-
-    let myRef = React.createRef();
+    this.myRef = React.createRef();
   }
 
   state = {
@@ -29,6 +30,7 @@ class App extends Component {
   handlerCreateMessage = (message) => {
     message.user = this.state.username;
     socket.emit("SEND_MESSAGE", message);
+    this.myRef.current.scrollTop = this.myRef.current.clientHeight;
   };
 
   render() {
