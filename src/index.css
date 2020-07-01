@@ -2,12 +2,14 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+  outline: none;
 }
 
 html,
 body {
   width: 100%;
   height: 100%;
+  background: #11e0b3;
 }
 
 body {
@@ -21,4 +23,74 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+#root {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.chat {
+  width: 100%;
+  max-width: 500px;
+  height: 800px;
+  margin: 0 auto;
+  border-radius: 22px;
+  padding: 20px;
+  background: white;
+}
+
+.messages {
+  height: calc(100% - 50px);
+  overflow-y: auto;
+  padding-right: 20px;
+}
+
+.create-message {
+  display: flex;
+  height: 50px;
+}
+
+.create-message input[type="text"] {
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 14px 0 0 14px;
+  width: 85%;
+  padding: 0 8px;
+}
+
+.create-message input[type="submit"] {
+  width: 15%;
+  background: #05ad89;
+  border-radius: 0 14px 14px 0;
+  font-weight: bold;
+  color: #fff;
+  border: 0;
+  cursor: pointer;
+  font-size: 16px;
+  line-height: 50px;
+}
+
+.create-message input[type="submit"]:hover,
+.create-message input[type="submit"]:focus {
+  opacity: 0.8;
+}
+
+.message {
+  background: #e5e5e5;
+  color: #333;
+  border-radius: 0 10px 10px;
+  margin-bottom: 10px;
+  padding: 10px;
+}
+
+.message-user {
+  font-weight: bold;
+}
+
+.message.message-me {
+  background: #05ad89;
+  color: #fff;
 }

@@ -6,7 +6,12 @@ class Messages extends Component {
     return (
       <div className="messages">
         {this.props.messages.map((message, index) => (
-          <div className="message" key={index}>
+          <div
+            className={`message ${
+              this.props.username === message.user ? "message-me" : ""
+            }`}
+            key={index}
+          >
             <div className="message-user">{message.user}</div>
             <div className="message-content">{message.content}</div>
           </div>
