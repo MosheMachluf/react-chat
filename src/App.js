@@ -9,7 +9,7 @@ class App extends Component {
     super();
 
     if (!socket) {
-      socket = socketIOClient("https://localhost:4000/");
+      socket = socketIOClient("http://localhost:4000/");
     }
 
     socket.on("SET_USERNAME", (username) => {
