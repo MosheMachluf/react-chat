@@ -25,9 +25,12 @@ class CreateMessage extends Component {
 
   handlerSubmit = (e) => {
     e.preventDefault();
+    let { messageContent } = this.state;
+    messageContent = messageContent.trim();
+    if (!messageContent) return;
+
     const message = {
-      user: "Moshe",
-      content: this.state.messageContent,
+      content: messageContent,
     };
 
     this.setState({ messageContent: "" });
